@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="color-scheme" content="light" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Athletic 2x" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Athletic 2x</title>
+  <link rel="manifest" href="./manifest-v4.webmanifest" />
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+  <link rel="icon" href="./icons/icon-192.png" type="image/png" />
+  <link rel="stylesheet" href="./style-v4.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button id="brandBtn" class="brand" aria-label="Vai alla Home">
+        <span class="brand-mark" aria-hidden="true">A2</span>
+        <span><small>RESPIRA · MUOVITI</small><strong>Athletic 2x</strong></span>
+      </button>
+      <span id="versionBadge" class="version-badge"></span>
+    </header>
+
+    <main id="app" aria-live="polite"></main>
+
+    <nav class="bottom-nav" aria-label="Navigazione principale">
+      <button data-nav="home" class="nav-btn active"><span aria-hidden="true">⌂</span><small>Home</small></button>
+      <button data-nav="history" class="nav-btn"><span aria-hidden="true">↗</span><small>Storico</small></button>
+      <button data-nav="settings" class="nav-btn"><span aria-hidden="true">⚙</span><small>Impostazioni</small></button>
+    </nav>
+  </div>
+
+  <div id="timerSheet" class="timer-sheet hidden" role="dialog" aria-modal="true" aria-labelledby="timerTitle">
+    <div class="timer-card">
+      <div class="timer-handle" aria-hidden="true"></div>
+      <p class="eyebrow">RECUPERO</p>
+      <h2 id="timerTitle">Prossima serie</h2>
+      <div id="timerValue" class="timer-value">01:30</div>
+      <div class="timer-progress"><span id="timerProgress"></span></div>
+      <div class="timer-actions">
+        <button id="add30Btn" class="secondary-btn">+30 sec</button>
+        <button id="skipTimerBtn" class="primary-btn">Salta recupero</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden" role="status"></div>
+  <input id="importFile" class="hidden" type="file" accept="application/json,.json" />
+
+  <script src="./workout-data-v4.js"></script>
+  <script src="./app-v4.js"></script>
+</body>
+</html>
